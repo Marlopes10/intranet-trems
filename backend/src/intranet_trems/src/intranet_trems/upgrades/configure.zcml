@@ -1,0 +1,17 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+
+  <genericsetup:upgradeSteps
+      profile="intranet_trems:default"
+      source="20240521002"
+      destination="20240521003"
+      >
+    <genericsetup:upgradeDepends
+        title="Cria tipos de conteúdo Área e Pessoa"
+        import_steps="typeinfo"
+        />
+  </genericsetup:upgradeSteps>
+
+</configure>
