@@ -81,3 +81,9 @@ class TestPessoa:
             content = api.content.create(container=container, **payload)
         assert content.portal_type == CONTENT_TYPE
         assert isinstance(content, Pessoa)
+
+    def test_review_state(self, portal, payload):
+        container = portal["colaboradores"]
+        with api.env.adopt_roles(["Manager"]):
+            content = api.content.create(container=container, **payload)
+        assert api.content.get_state(content) == "internal"
